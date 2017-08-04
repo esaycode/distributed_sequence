@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: sequence-service
+  cloud:
+      config:
+        profile: dev 
+        uri: http://config.easy.code.com:8114/
+server:
+  port: 10000
+    
