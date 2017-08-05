@@ -9,4 +9,7 @@
 	<groupId>com.easy.code.sequence.rpc.service</groupId>
 	<artifactId>com.easy.code.sequence.rpc.service</artifactId>
 
+	 <build>
+ 		 <finalName>easycode-sequence-rpc-service</finalName>
+ 	 </build>
 </project>

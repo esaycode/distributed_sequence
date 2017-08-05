@@ -11,17 +11,17 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.4.RELEASE</version>
 	</parent>
-	
-	 <dependencyManagement>
-	    <dependencies>
-	        <dependency>
-	            <groupId>org.springframework.cloud</groupId>
-	            <artifactId>spring-cloud-starter-parent</artifactId>
-     		    <version>Camden.SR5</version>
-	            <type>pom</type>
-	            <scope>import</scope>
-	        </dependency>
-	    </dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-parent</artifactId>
+				<version>Camden.SR5</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
@@ -33,11 +33,8 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-<!-- 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
+			<optional>true</optional> </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -53,19 +50,19 @@
 
 		<!-- 数据库 -->
 		<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<!-- 数据库 结束 -->
-		
-		<!-- 待归类  -->
+
+		<!-- 待归类 -->
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.1_3</version>
 		</dependency>
-		<!-- 待归类   -->
-		
+		<!-- 待归类 -->
+
 		<!-- tools start -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -73,7 +70,7 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 
@@ -85,12 +82,10 @@
 	<build>
 
 		<defaultGoal>compile</defaultGoal>
-
-
 		<plugins>
-		
-		
-		
+
+
+
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
@@ -139,6 +134,24 @@
 				</configuration>
 			</plugin>
 
+			<!-- 要将源码放上去，需要加入这个插件 -->
+
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 
@@ -153,4 +166,12 @@
 		<module>com.easy.code.sequence.rpc.service</module>
 		<module>com.easy.code.sequence.rpc.service.impl</module>
 	</modules>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>easyCode.Snapshot</id>
+			<url>http://39.108.76.169:8081/nexus/content/repositories/easyCode.Snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 </project>

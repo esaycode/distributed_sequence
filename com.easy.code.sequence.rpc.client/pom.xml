@@ -7,6 +7,7 @@
   </parent>
   <groupId>com.easy.code.sequence.rpc.client</groupId>
   <artifactId>com.easy.code.sequence.rpc.client</artifactId>
+  
   <dependencies>
   	<dependency>
 			<groupId>com.alibaba</groupId>
@@ -59,11 +60,10 @@
 			<optional>true</optional>
 		</dependency>
  	 </dependencies>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>easyCode.Snapshot</id>
-			<url>http://39.108.76.169:8081/nexus/content/repositories/easyCode.Snapshot</url>
-		</snapshotRepository>
-	</distributionManagement>
+ 	 
+ 	 
+ 	 <build>
+ 		 <finalName>easycode-sequence-rpc-client</finalName>
+ 	 </build>
+ 	 
 </project>
